@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>manifest</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+	<div class="border_outside">
+		<div class="container">
+			 <div class="registeOR">
+			 	 <span class="log_in active">ავტორიზაცია </span> ან <span class="registration">რეგისტაცია</span>
+			 </div>
+			 <form class="bb" method="" action="">
+			 	  <input type="text" name="userNname" class="user_name hidden" value="მომხმარებლის სახელი">
+			 	  <input type="emile" name="mail" class="user_mail hidden" value="ელ.ფოსტის მისამართი">
+			 	  <input type="password" name="user_pass" value="პაროლი" class="user_pass hidden">
+			 	  <input type="text" name="name" value="სახელი ან ელფოსტა" class="nameORmail">
+			 	  <input type="password" name="pass" class="pass" value="პაროლი">
+			 	  <div class='b hidden'>
+			 	  	<button class="register_btn">რეგისტრაცია</button>
+			 	  	<span class="back_login ">უკვე წევრი ვარ</span>
+			 	  </div>
+			 	  <button class="login_bttn">შესვლა</button>
+			 	  <button class="login_fb_btn">შესვლა ფეისბუკით</button>
+			 </form>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(function(){
+                $('.registeOR span').each(function(){
+                	$(this).click(function(){
+                		$('.registeOR span').css('color','#ccc');
+                		$(this).css('color', '#fff')
+                	})
+                });
+             $('.registration').click(function(){
+             $('.user_name, .user_mail, .user_pass, .b').removeClass('hidden');
+             $('.nameORmail, .login_bttn, .login_fb_btn, .pass').addClass('hidden');
+             })
+
+              $('.log_in, .back_login').click(function(){
+             $('.user_name, .user_mail, .user_pass, .b').addClass('hidden');
+             $('.nameORmail, .login_bttn, .login_fb_btn, .pass').removeClass('hidden');
+                 
+             })
+
+
+
+
+              $('input').each(function(index, element) {
+    var $element = $(element);
+    var defaultValue = $element.val();
+    $element.focus(function() {
+        var actualValue = $element.val();
+        if (actualValue == defaultValue) {
+            $element.val('');
+        }
+    });
+    $element.blur(function() {
+        var actualValue = $element.val();
+        if (!actualValue) {
+            $element.val(defaultValue);
+        }
+    });
+});
+
+             
+		})
+	</script>
+
+<script type="text/javascript" src="js/my.js"></script>
+</body>
+</html>

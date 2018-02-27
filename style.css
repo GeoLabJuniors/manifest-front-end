@@ -1,0 +1,101 @@
+@charset "UTF-8";
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Conv_NeoTrash-Bold'; }
+
+@font-face {
+  font-family: 'Conv_gl-mkafio-book';
+  src: url("fonts/gl-mkafio-book.eot");
+  src: local("☺"), url("fonts/gl-mkafio-book.woff") format("woff"), url("fonts/gl-mkafio-book.ttf") format("truetype"), url("fonts/gl-mkafio-book.svg") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'Conv_NeoTrash-Bold';
+  src: url("fonts/NeoTrash-Bold.eot");
+  src: local("☺"), url("fonts/NeoTrash-Bold.woff") format("woff"), url("fonts/NeoTrash-Bold.ttf") format("truetype"), url("fonts/NeoTrash-Bold.svg") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+input:focus, button:focus, textarea:focus {
+  outline: none; }
+
+a:hover {
+  text-decoration: none; }
+
+.hidden {
+  display: none; }
+
+body {
+  background: #000;
+  color: #fff; }
+
+.border_outside {
+  border: 1px solid #fff;
+  border-right: 0px;
+  height: calc(100vh - 30px);
+  width: calc(100vw - 30px);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); }
+
+.container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.b {
+  margin-top: 30px; }
+  .b .back_login {
+    align-self: flex-end;
+    margin-left: 30px;
+    cursor: pointer; }
+
+button {
+  background: #000;
+  color: #fff;
+  border: 1px solid #fff;
+  font-size: 18pt;
+  padding: 3px 2px;
+  cursor: pointer; }
+  button.login_bttn {
+    margin-bottom: 20px;
+    align-self: flex-end;
+    margin-bottom: 40px; }
+
+input {
+  background: #000;
+  color: #fff;
+  border: none;
+  width: 300px;
+  font-size: 12pt;
+  border-bottom: 1px solid #fff;
+  margin-bottom: 20px;
+  display: inline-block;
+  padding-bottom: 2px; }
+
+.registeOR {
+  font-size: 21pt;
+  color: #ccc;
+  margin-bottom: 40px; }
+  .registeOR span {
+    font-size: 24pt;
+    cursor: pointer;
+    display: inline-block; }
+    .registeOR span.active {
+      color: #fff; }
+    .registeOR span:first-child {
+      margin-right: 36px; }
+    .registeOR span:last-child {
+      margin-left: 36px; }
+
+/*# sourceMappingURL=style.css.map */
