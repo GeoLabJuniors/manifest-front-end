@@ -32,14 +32,39 @@ body {
 .border_outside {
   border: 1px solid #fff;
   border-right: 0px;
-  height: calc(100vh - 30px);
-  width: calc(100vw - 30px);
+  height: calc(100vh - 60px);
+  width: calc(100vw - 60px);
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%); }
 
+.changeLanguage {
+  position: absolute;
+  top: 37px;
+  right: -31px;
+  display: block;
+  width: 120px;
+  text-align: center;
+  height: 33px;
+  z-index: 1;
+  background: #000000;
+  transform: translate(-50%, -50%); }
+
+.Members {
+  position: absolute;
+  bottom: -11px;
+  right: -31px;
+  display: block;
+  width: 120px;
+  text-align: center;
+  height: 33px;
+  z-index: 1;
+  background: #000000;
+  transform: translate(-50%, -50%); }
+
 .container {
+  width: 100%;
   position: absolute;
   left: 50%;
   top: 50%;
