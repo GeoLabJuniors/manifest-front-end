@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>manifest</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="changeLanguage">
+		<span id="eng">ENG</span>/<span id="geo">ქარ</span>
+	</div>
+<div class="Members">
+			წევრი : <span id="Members"> 32143</span>
+		</div>
+	<div class="border_outside">
+		
+		<div class="container">
+			  
+
+
+				<div class="window">
+				
+				<p>> <span id="text">Write something</span><span id="blink"></span></p>
+				</div>
+				<div class="textareaContainer">
+				<input id="textfield" type="text" value="გამარჯობა სანდრო :) " placeholder="Write something!">
+				
+				</div>
+				<div class="qustion_buttons"><button>კი</button> <button>არა</button></div>
+
+
+
+
+		</div>
+	</div>
+
+	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro');
+
+*{
+  padding:0;
+  margin:0;
+}
+
+body{
+ 
+  box-sizing:border-box;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#85bcb1', endColorstr='#bbc4e8', GradientType=1 );
+}
+#textfield{
+	opacity: 0;
+	display: none;		
+}
+
+/*.window{
+  background:#222;  
+  height:300px;
+  max-width:620px;
+  margin:auto;
+  overflow:hidden;
+  box-sizing:border-box;
+  border-radius:10px;
+  -webkit-box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.75);
+}*/
+.window>.top{
+  background: rgba(240,240,240,1);
+  background: -moz-linear-gradient(top, rgba(240,240,240,1) 0%, rgba(222,222,222,1) 47%, rgba(217,217,217,1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(240,240,240,1)), color-stop(47%, rgba(222,222,222,1)), color-stop(100%, rgba(217,217,217,1)));
+  background: -webkit-linear-gradient(top, rgba(240,240,240,1) 0%, rgba(222,222,222,1) 47%, rgba(217,217,217,1) 100%);
+  background: -o-linear-gradient(top, rgba(240,240,240,1) 0%, rgba(222,222,222,1) 47%, rgba(217,217,217,1) 100%);
+  background: -ms-linear-gradient(top, rgba(240,240,240,1) 0%, rgba(222,222,222,1) 47%, rgba(217,217,217,1) 100%);
+  background: linear-gradient(to bottom, rgba(240,240,240,1) 0%, rgba(222,222,222,1) 47%, rgba(217,217,217,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f0f0', endColorstr='#d9d9d9', GradientType=0 );
+  display:block;
+  height:25px;
+  text-align:center;
+  line-height:25px;
+  font-size:14px;
+  color:#222;
+  font-family: 'Roboto', sans-serif;
+}
+
+p{
+  padding: 22px;
+    box-sizing: border-box;
+    color: #ffffff;
+    font-size: 36pt;
+    /* font-family: 'Source Code Pro', monospace; */
+    overflow-y: auto;
+  
+}
+
+
+/*#blink{
+  content:'';
+  display:inline-block;
+  border-bottom:26px solid #00Cb5c;
+  width:18px;
+  margin-left:5px;
+  animation: blink 0.5s linear 0.5s infinite alternate;
+}*/
+
+@keyframes blink{
+  0%{
+    opacity:0;    
+  }
+  50%{
+    opacity:0
+  }
+  51%{
+    opacity:1;
+  }
+  100%{
+    opacity:1;    
+  }
+}
+
+.textareaContainer{
+  padding:11px;
+  background:rgba(0,0,0,0.5);
+}
+/*input,button{
+  font-family: 'Roboto', sans-serif;
+  background:none;
+  border:none;
+  outline:none;
+  color:#FFF;
+  font-size:18px;
+  font-weight:400;
+  line-height:30px;
+  padding:5px 11px;
+  box-sizing:border-box;
+  display:block;
+  float:left;
+}*/
+input{
+  width:70%;
+}
+input::placeholder{
+  color:#AAA;
+}
+
+/*button{
+  width:30%;
+  background:#00aa3c;
+}
+button:hover{
+  cursor:pointer;
+  background:#009a2c;
+}*/
+
+	/*.textareaContainer{
+	  overflow:hidden;
+	  display:block;
+	  width:300px;
+	  position:absolute;
+	  bottom:22px;
+	  left:50%;
+	  margin-left:-150px;
+	}*/
+	</style>
+
+
+
+
+
+
+
+<script type="text/javascript">
+	
+	var done = true;
+
+function type(outputHTML,delay) {
+  var text = document.getElementById("textfield").value;
+  outputHTML.innerHTML = "";
+  setTimeout(function() {
+    typeRec(text, outputHTML, 0, delay);
+  }, delay);
+}
+var svald=0;
+var shecherdiwamo
+
+function typeRec(text, outputHTML, i, delay) {
+  if (i == text.length ) {//end condition for recursive function
+  shecherdiwamo=  setTimeout(function() {
+      typeReverseRec(outputHTML,delay/2);//start the recursive reverse typing
+    },delay*10);
+    return 0;
+  }
+  outputHTML.innerHTML += text[i++];
+  
+  setTimeout(function() {
+    typeRec(text, outputHTML, i, delay); 
+  }, (delay/2)*Math.random()+delay);//Add a random element to the delay so it doesn't seem to linear.
+}
+
+
+function typeReverseRec(outputHTML,delay){
+  outputHTML.innerHTML = outputHTML.innerHTML.slice(0, -1);
+
+   if (outputHTML.innerHTML.length == 0) {
+     done = true;
+     return 0;
+  }
+  
+  setTimeout(function() {
+    typeReverseRec(outputHTML, delay);
+  }, delay);
+
+}
+
+
+
+function writeText() {
+  if(done){
+    document.getElementById("text").innerHTML = "";
+    done = false;
+    type(document.getElementById("text"),75);
+  }
+}
+
+// document.getElementById("textfield").addEventListener("keyup",function(event){
+//   if (event.keyCode == 13) {
+//    writeText();
+//   }
+// });
+
+
+           if(svald<=0)   {
+           	writeText();
+           }                                        
+
+
+
+var TypeText = function(elt,textArr,delay) {
+  this.textArr = textArr;
+  this.elt = elt;
+  this.delay = delay;
+  
+  this.type = function(){
+    var text = textArr[0];
+    elt.innerHTML = "";
+    setTimeout(function() {
+      typeRec(text, elt, 0, delay);
+    }, delay);
+  };
+
+  function typeRec(text, outputHTML, i, delay) {
+  if (i == text.length) {//end condition for recursive function
+    setTimeout(function() {
+      typeReverseRec(outputHTML,delay/2);//start the recursive reverse typing
+    },delay*10);
+    return 0;
+  }
+  outputHTML.innerHTML += text[i++];
+  
+  setTimeout(function() {
+    typeRec(text, outputHTML, i, delay); 
+  }, (delay/2)*Math.random()+delay);//Add a random element to the delay so it doesn't seem too linear.
+}
+
+var typeReverseRec = function typeReverseRec(outputHTML,delay){
+  outputHTML.innerHTML = outputHTML.innerHTML.slice(0, -1);
+
+   if (outputHTML.innerHTML.length == 0) {
+     done = true;
+     return 0;
+  }
+  
+  setTimeout(function() {
+    typeReverseRec(outputHTML, delay);
+  }, delay);
+
+};
+
+};
+var tezt2='დაინტერესებული ხარ პროგრამირებით?'
+
+setInterval(function(){
+	console.log($('#text').text().length);
+	console.log(tezt2.length);
+	
+    
+	$('#textfield').val(tezt2);
+  
+	if($('#text').text().length==0 && svald<1){
+		writeText()
+		svald++;
+	}
+	if(svald>0){
+      clearInterval(shecherdiwamo);
+
+	}
+	if($('#text').text().length==tezt2.length){
+		$('.qustion_buttons').css('display', 'flex');
+		console.log('zd ll')
+	}
+	
+},100)
+
+</script>
+
+
+
+
+
+
+
+
+
+
+	<script type="text/javascript">
+		$(function(){
+                $('.registeOR span').each(function(){
+                	$(this).click(function(){
+                		$('.registeOR span').css('color','#ccc');
+                		$(this).css('color', '#fff')
+                	})
+                });
+             $('.registration').click(function(){
+             $('.user_name, .user_mail, .user_pass, .b').removeClass('hidden');
+             $('.nameORmail, .login_bttn, .login_fb_btn, .pass').addClass('hidden');
+             })
+
+              $('.log_in, .back_login').click(function(){
+             $('.user_name, .user_mail, .user_pass, .b').addClass('hidden');
+             $('.nameORmail, .login_bttn, .login_fb_btn, .pass').removeClass('hidden');
+             $('.log_in').css('color', '#fff');
+             $('.registration').css('color', '#ccc');
+
+                 
+             })
+
+
+
+
+              $('input').each(function(index, element) {
+    var $element = $(element);
+    var defaultValue = $element.val();
+    $element.focus(function() {
+        var actualValue = $element.val();
+        if (actualValue == defaultValue) {
+            $element.val('');
+        }
+    });
+    $element.blur(function() {
+        var actualValue = $element.val();
+        if (!actualValue) {
+            $element.val(defaultValue);
+        }
+    });
+});
+
+             
+		})
+	</script>
+
+<script type="text/javascript" src="js/my.js"></script>
+</body>
+</html>

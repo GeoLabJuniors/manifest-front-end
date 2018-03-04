@@ -19,10 +19,28 @@
 input:focus, button:focus, textarea:focus {
   outline: none; }
 
+.textareaContainer {
+  display: none; }
+
+.textareaContainer {
+  opacity: 0; }
+
 a:hover {
   text-decoration: none; }
 
 .hidden {
+  display: none; }
+
+.qustion_buttons button {
+  font-size: 24pt;
+  padding: 10px 20px !important;
+  border: 1px solid #fff; }
+
+.qustion_buttons {
+  margin-top: 12vh;
+  display: flex;
+  justify-content: space-between;
+  min-width: 22%;
   display: none; }
 
 body {

@@ -34,7 +34,7 @@
 		</div>
 	</div>
 	<script type="text/javascript">
-		$(function(){
+	$(function(){
                 $('.registeOR span').each(function(){
                 	$(this).click(function(){
                 		$('.registeOR span').css('color','#ccc');
@@ -49,6 +49,9 @@
               $('.log_in, .back_login').click(function(){
              $('.user_name, .user_mail, .user_pass, .b').addClass('hidden');
              $('.nameORmail, .login_bttn, .login_fb_btn, .pass').removeClass('hidden');
+             $('.log_in').css('color', '#fff');
+             $('.registration').css('color', '#ccc');
+
                  
              })
 
