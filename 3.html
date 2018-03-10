@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>manifest</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="changeLanguage">
+    <span id="eng">ENG</span>/<span id="geo">ქარ</span>
+  </div>
+<div class="Members">
+      წევრი : <span id="Members"> 32143</span>
+    </div>
+  <div class="border_outside">
+    
+    <div class="container">
+        
+
+
+        <div class="window">
+        
+        <p> <span id="text"></span><span id="blink"></span></p>
+        </div>
+        <div class="textareaContainer">
+        <input id="textfield" type="text" value="დაინტერესებული ხარ პროგრამირებით?" placeholder="Write something!">
+        
+        </div>
+        <div class="qustion_buttons ">
+
+          
+<button class="btn_hover_effect">
+
+            <div class=""><span class="time" data-time="">კი</span></div>
+</button>
+
+           <button class="btn_hover_effect">
+
+            <div class=""><span class="time" data-time="">არა</span></div>
+</button></div>
+
+
+
+
+    </div>
+  </div>
+
+
+    <script type="text/javascript">
+      $('.btn_hover_effect').hover(function(){
+         $(this).children('div').addClass('clock is-off')
+      },
+      function(){
+        $(this).children('div').removeClass('clock is-off')
+      }
+      )
+  </script>
+
+
+  <script type="text/javascript">
+  
+  $(document).ready(function () {
+
+  function second_passed() {
+    $('.clock').removeClass('is-off');
+  }
+  setTimeout(second_passed, 2000)
+
+  $('.switcher').on('click', function(e) {
+    e.preventDefault();
+    $('.screen').toggleClass('glitch');
+  });
+
+
+  var newDate = new Date();
+  newDate.setDate(newDate.getDate());
+
+  setInterval( function() {
+
+    var hours    = new Date().getHours();
+    var seconds  = new Date().getSeconds();
+    var minutes  = new Date().getMinutes();
+  // var realTime ='beqa '
+    // var realTime = ( hours < 10 ? '0' : '' ) + hours + ' : ' + ( minutes < 10 ? '0' : '' ) + minutes + ' : ' + ( seconds < 10 ? '0' : '' ) + seconds
+
+    // $('.time').html(realTime);
+    // $('.time').attr('data-time', realTime);
+
+  }, 1000);
+
+});
+</script>
+
+
+
+
+
+
+
+<script type="text/javascript">
+	
+	var done = true;
+
+function type(outputHTML,delay) {
+  var text = document.getElementById("textfield").value;
+  outputHTML.innerHTML = "";
+  setTimeout(function() {
+    typeRec(text, outputHTML, 0, delay);
+  }, delay);
+}
+var svald=0;
+var shecherdiwamo
+
+function typeRec(text, outputHTML, i, delay) {
+  if (i == text.length ) {//end condition for recursive function
+  shecherdiwamo =  setTimeout(function() {
+      typeReverseRec(outputHTML,delay/2);//start the recursive reverse typing
+    },delay*10);
+    return 0;
+  }
+  outputHTML.innerHTML += text[i++];
+  
+  setTimeout(function() {
+    typeRec(text, outputHTML, i, delay); 
+  }, (delay/2)*Math.random()+delay);//Add a random element to the delay so it doesn't seem to linear.
+}
+
+
+function typeReverseRec(outputHTML,delay){
+  outputHTML.innerHTML = outputHTML.innerHTML.slice(0, -1);
+
+   if (outputHTML.innerHTML.length == 0) {
+     done = true;
+     return 0;
+  }
+  
+  setTimeout(function() {
+    typeReverseRec(outputHTML, delay);
+  }, delay);
+
+}
+
+
+
+function writeText() {
+  if(done){
+    document.getElementById("text").innerHTML = "";
+    done = false;
+    type(document.getElementById("text"),75);
+  }
+}
+
+// document.getElementById("textfield").addEventListener("keyup",function(event){
+//   if (event.keyCode == 13) {
+//    writeText();
+//   }
+// });
+
+
+           if(svald<=0)   {
+           	writeText();
+           }                                        
+
+
+
+var TypeText = function(elt,textArr,delay) {
+  this.textArr = textArr;
+  this.elt = elt;
+  this.delay = delay;
+  
+  this.type = function(){
+    var text = textArr[0];
+    elt.innerHTML = "";
+    setTimeout(function() {
+      typeRec(text, elt, 0, delay);
+    }, delay);
+  };
+
+  function typeRec(text, outputHTML, i, delay) {
+  if (i == text.length) {//end condition for recursive function
+    setTimeout(function() {
+      typeReverseRec(outputHTML,delay/2);//start the recursive reverse typing
+    },delay*10);
+    return 0;
+  }
+  outputHTML.innerHTML += text[i++];
+  
+  setTimeout(function() {
+    typeRec(text, outputHTML, i, delay); 
+  }, (delay/2)*Math.random()+delay);//Add a random element to the delay so it doesn't seem too linear.
+}
+
+var typeReverseRec = function typeReverseRec(outputHTML,delay){
+  outputHTML.innerHTML = outputHTML.innerHTML.slice(0, -1);
+
+   if (outputHTML.innerHTML.length == 0) {
+     done = true;
+     return 0;
+  }
+  
+  setTimeout(function() {
+    typeReverseRec(outputHTML, delay);
+  }, delay);
+
+};
+
+};
+var tezt2='დაინტერესებული ხარ პროგრამირებით?'
+var  stintbul=false;
+var stopintrer = setInterval(function(){
+	// console.log($('#text').text().length);
+	// console.log(tezt2.length);
+	
+    
+	$('#textfield').val(tezt2);
+  
+	if($('#text').text().length==0 && svald<1){
+		writeText()
+		svald++;
+	}
+	if(svald==0){
+      clearInterval(shecherdiwamo);
+
+	}
+	if($('#text').text().length==tezt2.length){
+		$('.qustion_buttons').css('display', 'flex');
+		
+    
+ 
+
+	}
+	
+},100)
+
+
+
+
+
+
+
+
+
+// Glitch Timeline Function
+// var $text = document.querySelector('.btn-glitch-active'),
+//     $filter = document.querySelector('.svg-sprite'),
+//     $turb = $filter.querySelector('#filter feTurbulence'),
+//     turbVal = { val: 0.000001 },
+//     turbValX = { val: 0.000001 };
+
+// var glitchTimeline = function() {
+//     var timeline = new TimelineMax({
+//         repeat: -1,
+//         repeatDelay: 2,
+//         paused: true,
+//         onUpdate: function () {
+//             $turb.setAttribute('baseFrequency', turbVal.val + ' ' + turbValX.val);
+//         }
+//     });
+
+//     timeline
+//         .to(turbValX, 0.1, { val: 0.5 })
+//         .to(turbVal, 0.1, { val: 0.02 });
+//     timeline
+//         .set(turbValX, { val: 0.000001 })
+//         .set(turbVal, { val: 0.000001 });
+//     timeline
+//         .to(turbValX, 0.2, { val: 0.4 }, 0.4)
+//         .to(turbVal, 0.2, { val: 0.002 }, 0.4);
+//     timeline
+//         .set(turbValX, { val: 0.000001 })
+//         .set(turbVal, { val: 0.000001 });
+
+//     // console.log("duration is: " + timeline.duration());
+
+//     return {
+//         start: function() {
+//             timeline.play(0);
+//         },
+//         stop: function() {
+//             timeline.pause();
+//         }
+//     };
+// };
+
+// btnGlitch = new glitchTimeline();
+
+// $('.btn-glitch')
+//     .on('mouseenter', function () {
+//           $(this).addClass('btn-glitch-active');
+//           btnGlitch.start();
+//     })
+//     .on('mouseleave', function () {
+//         var $this = $(this);
+//         if ( $this.hasClass('btn-glitch-active') ) {
+//             $this.removeClass('btn-glitch-active');
+//             btnGlitch.stop();
+//         }
+//     });
+
+</script>
+
+
+
+
+
+
+
+
+
+<!-- 
+	<script type="text/javascript">
+		$(function(){
+                $('.registeOR span').each(function(){
+                	$(this).click(function(){
+                		$('.registeOR span').css('color','#ccc');
+                		$(this).css('color', '#fff')
+                	})
+                });
+             $('.registration').click(function(){
+             $('.user_name, .user_mail, .user_pass, .b').removeClass('hidden');
+             $('.nameORmail, .login_bttn, .login_fb_btn, .pass').addClass('hidden');
+             })
+
+              $('.log_in, .back_login').click(function(){
+             $('.user_name, .user_mail, .user_pass, .b').addClass('hidden');
+             $('.nameORmail, .login_bttn, .login_fb_btn, .pass').removeClass('hidden');
+             $('.log_in').css('color', '#fff');
+             $('.registration').css('color', '#ccc');
+
+                 
+             })
+
+
+
+
+              $('input').each(function(index, element) {
+    var $element = $(element);
+    var defaultValue = $element.val();
+    $element.focus(function() {
+        var actualValue = $element.val();
+        if (actualValue == defaultValue) {
+            $element.val('');
+        }
+    });
+    $element.blur(function() {
+        var actualValue = $element.val();
+        if (!actualValue) {
+            $element.val(defaultValue);
+        }
+    });
+});
+
+             
+		})
+
+
+
+
+
+	</script> -->
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="js/my.js"></script>
+</body>
+</html>
