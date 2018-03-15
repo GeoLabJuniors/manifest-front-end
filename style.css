@@ -150,8 +150,58 @@ a:hover {
 body {
   background: #000;
   color: #fff; }
+.time{    padding: 10px 20px;
+    font-size: 34px;
+    display: block;
+    transform: scale(1.2, 1.2);
+    cursor: pointer;
+  }
+  .question_text_type{
+    font-size: 30px;
+    margin-bottom: 40px;
+  }
+  .you{
+    font-size: 20px;
+    display: inline-block;
+    position: relative;
+  }
+  .beff:before{
+       position: absolute;
+    content: '';
+    width: 14px;
+    height: 3px;
+    background: #fff;
+    animation-name: lineyou;
+    animation-iteration-count: infinite;
+    animation-duration: 0.8s;
+    right: -16px;
+    top: 16px;
 
-.border_outside {
+  }
+  .btn_hover_effect{
+    float: right;
+  }
+  .textarea_you{
+    background: #000;
+     resize: none; 
+     color: #fff;
+     padding-top: 10px;
+     width: 350px;
+      height: 200px;
+       padding: 0;
+       padding-top: 2px;
+    padding-left: 7px;
+    font-size: 18px;
+  }
+  @keyframes lineyou{
+    0%{
+        opacity: 0;
+    }
+    100%{
+      opacity: 1;
+    }
+  }
+ .border_outside {
   border: 1px solid #fff;
   border-right: 0px;
   height: calc(100vh - 60px);
