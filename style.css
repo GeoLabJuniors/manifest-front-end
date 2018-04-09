@@ -171,6 +171,36 @@ body {
     display: inline-block;
     position: relative;
   }
+  .manifest_text{
+    width: 100%;
+   text-indent: 20px;
+   max-width: 70%;
+   max-height: 60vh;
+    margin: auto;
+    font-size: 21pt;
+    overflow-y: scroll;
+  }
+.manifest_text::-webkit-scrollbar {
+    width: 10px;
+    
+}
+.manifest_text::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    background: #ccc; 
+    overflow: unset;
+}
+.manifest_text::-webkit-scrollbar-thumb {
+    background: #fff; 
+    width: 10% !important;
+    height: 15px !important;
+}
+.manifest_text_form{
+  width: 90%;
+  display: block;
+  margin-top: 20px;
+  text-align: right;
+}
+
   .beff:before{
        position: absolute;
     content: '';
