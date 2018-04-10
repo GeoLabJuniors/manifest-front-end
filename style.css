@@ -23,6 +23,9 @@
     padding-right: 29px !important;
     border-color: #cc0033;
 }
+.joined{
+  font-size: 36pt !important;
+}
 #textfield {
   opacity: 0;
   display: none; }
