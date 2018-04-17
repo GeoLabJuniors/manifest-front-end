@@ -178,7 +178,7 @@ body {
     width: 100%;
    text-indent: 20px;
    max-width: 70%;
-   max-height: 60vh;
+   height: 60vh;
     margin: auto;
     font-size: 21pt;
     overflow-y: scroll;
