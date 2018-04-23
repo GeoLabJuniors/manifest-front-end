@@ -181,7 +181,7 @@ body {
    height: 60vh;
     margin: auto;
     font-size: 21pt;
-    overflow-y: scroll;
+    /*overflow-y: scroll;*/
   }
 .manifest_text::-webkit-scrollbar {
     width: 10px;

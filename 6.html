@@ -217,7 +217,21 @@ var tezt2='ცნობილი ფაქტია, რომ გვერდ�
 var  stintbul=false;
 var stopintrer = setInterval(function(){
   // console.log($('#text').text().length);
-  // console.log(tezt2.length);
+  // console.log(tezt2.length) 57 31px;
+ // console.log($('#text').height()/31)
+  // console.log($('#text').text().length/57+'balbla'+$('#text').height()/31)
+  
+var sqrolsgasacherebeli = true;
+
+
+  if($('#text').text().length/57 > $('#text').height()/31 ){
+      $('#text').css({'overflow-y':'scroll', })
+      $('#text').scrollTop($('#text').text().length/57*31);
+      console.log($('#text').scrollTop())
+  }
+
+
+
   
     
   $('#textfield').val(tezt2);
@@ -232,9 +246,12 @@ var stopintrer = setInterval(function(){
   }
   if($('#text').text().length==tezt2.length){
     $('.qustion_buttons').css('display', 'flex');
+
+    sqrolsgasacherebeli=false;
+    // bbb(false);
     
-    
- 
+      clearInterval(stopintrer);
+
 
   }
   
