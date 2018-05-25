@@ -156,6 +156,11 @@ a:hover {
   min-width: 22%;
   display: none; }
 
+  .qustion_buttons a{
+  text-decoration: none;;
+  color: inherit;
+}
+
 body {
   background: #000;
   color: #fff; }

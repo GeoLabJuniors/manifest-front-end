@@ -6,9 +6,6 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-   <!--  <audio id="song1"  loop>
-  <source src="glitch.mp3" type="audio/mpeg">
-  </audio> -->
 <div class="changeLanguage">
     <span id="eng">ENG</span>/<span id="geo">ქარ</span>
   </div>
@@ -21,11 +18,20 @@
         
 
 
-       <div class="question_text_type">
-          როგორ ფიქრობ, რა არის პროგრამირება?
-       </div>
-   <form>
-       <div class="text_type_box">
+        <div class="window">
+        
+        <p style="font-size: 30px;"> <span id="text"></span><span id="blink"></span></p>
+        </div>
+        <div class="textareaContainer">
+        <input id="textfield" type="text" value="როგორ ფიქრობ, რა არის პროგრამირება?" placeholder="Write something!">
+        
+        </div>
+        <div style="min-height: 286px; margin-top: 30px;  ">
+        <div style="margin-top: 0px;" class="qustion_buttons ">
+
+
+     <form method="post" action="6.html">
+       <div  class="text_type_box">
         <div class="textarea_box" style="display: flex; align-items: flex-start;">
          <span class="you beff">შენ:</span><textarea class="textarea_you" style=""  ></textarea>
          </div>
@@ -54,6 +60,14 @@
        >
    </form>
 
+
+
+</div>
+</div>
+
+
+
+
     </div>
   </div>
 
@@ -61,7 +75,6 @@
     <script type="text/javascript">
       $('.btn_hover_effect').hover(function(){
          $(this).children('div').addClass('clock is-off')
-         // $('#song1')[0].play()
       },
       function(){
         $(this).children('div').removeClass('clock is-off')
@@ -110,7 +123,7 @@
 
 
 
-<!-- <script type="text/javascript">
+<script type="text/javascript">
 	
 	var done = true;
 
@@ -218,7 +231,7 @@ var typeReverseRec = function typeReverseRec(outputHTML,delay){
 };
 
 };
-var tezt2='დაინტერესებული ხარ პროგრამირებით?'
+var tezt2='როგორ ფიქრობ, რა არის პროგრამირება?'
 var  stintbul=false;
 var stopintrer = setInterval(function(){
 	// console.log($('#text').text().length);
@@ -311,7 +324,7 @@ var stopintrer = setInterval(function(){
 //     });
 
 </script>
- -->
+
 
 
 
